@@ -1,0 +1,89 @@
+<html lang="pt-BR">
+<head>
+    <!-- Definindo o charset para garantir a codificação correta dos caracteres -->
+    <meta charset="UTF-8">
+    <!-- Definindo o viewport para garantir que a página seja responsiva em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link para o arquivo de estilo CSS (presumivelmente define o design da calculadora) -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Exibe uma mensagem caso o JavaScript esteja desativado no navegador -->
+    <noscript>Erro: Ative o JavaScript</noscript>
+    <!-- Título da página que será exibido na aba do navegador -->
+    <title>Calculadora</title>
+</head>
+<body>
+    <!-- Principal container da calculadora -->
+    <div class="tela">
+        <!-- Fundo da calculadora -->
+        <div class="fundo">
+            <!-- Área onde os cálculos serão mostrados -->
+            <div class="Calculos">
+                <!-- Área de exibição dos cálculos-->
+                <div class="historico">
+                     <!-- Este espaço pode ser utilizado para exibir cálculos anteriores ou um histórico de operações -->
+                </div> 
+                <!-- Exibição do símbolo de igual (fução estética) -->
+                <h2>=</h2>
+                <!-- Resultados da calculadora serão exibidos aqui -->
+                <h1>0</h1> 
+            </div>
+        </div>
+        <!-- Área estética superior que simula um notch de um smartphone  -->
+        <div class="corte">
+        </div>
+        <!-- Área para outras expressões ou informações adicionais (futuramente) -->
+        <div class="MaisExpressoes">
+        </div>
+        <!-- Área onde os botões (números e operadores) estarão -->
+        <div class="NumerosExpressoes">
+            <!-- Container principal de botões da calculadora -->
+            <div class="digitos">
+                <!-- Botão para limpar a tela e reiniciar a calculadora -->
+                <button class="btnMaster">C</button>
+                <!-- Botões para calcular porcentagem, alternar o sinal do número e dividir -->
+                <button class="btnMaster">%</button>
+                <button class="btnMaster">±</button>
+                <button class="btnMaster">/</button>
+
+                <!-- Botões de números de 7 a 9 e operador multiplicação -->
+                <button class="btnMaster">7</button>
+                <button class="btnMaster">8</button>
+                <button class="btnMaster">9</button>
+                <button class="btnMaster">X</button>
+
+                <!-- Botões de números de 4 a 6 e operador subtração -->
+                <button class="btnMaster">4</button>
+                <button class="btnMaster">5</button>
+                <button class="btnMaster">6</button>
+                <button class="btnMaster">-</button>
+
+                <!-- Botões de números de 1 a 3 e operador adição -->
+                <button class="btnMaster">1</button>
+                <button class="btnMaster">2</button>
+                <button class="btnMaster">3</button>
+                <button class="btnMaster">+</button>
+
+                <button class="btnMaster" id="desativado">
+                    <!-- Ícone SVG representando um símbolo para seleção de tema (talvez usado futuramente para alteração do tema) --> 
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="12.2599" cy="12.3407" rx="6.49038" ry="6.44905" fill="#FFFFFF"/>
+                    <rect x="11.6987" width="1.60256" height="4.29936" fill="#FFFFFF"/>
+                    <rect width="1.59236" height="4.32692" transform="matrix(0 -1 -1 0 4.3269 13.2166)" fill="#FFFFFF"/>
+                    <rect width="1.59747" height="4.31317" transform="matrix(0.709362 -0.704844 -0.709362 -0.704844 6.26465 7.35077)" fill="#FFFFFF"/>
+                    <rect width="1.59747" height="4.31317" transform="matrix(0.709362 -0.704844 -0.709362 -0.704844 20.688 21.8413)" fill="#FFFFFF"/>
+                    <rect width="1.59236" height="4.32692" transform="matrix(0 -1 -1 0 25 13.2166)" fill="#FFFFFF"/>
+                    <rect width="1.59747" height="4.31317" transform="matrix(-0.709362 -0.704844 -0.709362 0.704844 21.8208 4.31073)" fill="#FFFFFF"/>
+                    <rect width="1.59747" height="4.31317" transform="matrix(-0.709362 -0.704844 -0.709362 0.704844 7.39795 18.8011)" fill="#FFFFFF"/>
+                    <rect x="11.6987" y="20.7006" width="1.60256" height="4.29936" fill="#FFFFFF"/>
+                    </svg>
+                </button>
+                <button class="btnMaster">0</button>
+                <button class="btnMaster">,</button>
+                <button class="btnMaster btnigual">=</button>
+            </div> 
+        </div>
+    </div>
+    <!-- Link para o arquivo JavaScript que controla a funcionalidade da calculadora -->
+    <script src="script.js"></script>
+</body>
+</html>

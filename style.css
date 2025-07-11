@@ -1,0 +1,153 @@
+/* Remove as margens e o preenchimento padrão do body */
+body{
+    padding: 0;
+    margin: 0;
+
+    overflow: hidden; /* Evita que barras de rolagem apareçam se algum conteúdo ultrapassar a tela */
+}
+
+.tela{
+    position: relative;            /* Permite que elementos internos com position:absolute se posicionem com base nela */
+    width: 360px;                  /* Largura total da calculadora (inclui padding) */
+    height: 800px;                 /* Altura total da calculadora */
+
+    /* Centralização da tela (horizontal e vertical) usando transform */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Fundo principal da calculadora (estrutura escura com borda arredondada) */
+.fundo{
+    position: absolute;
+    box-sizing: border-box; /* Garante que padding e bordas não aumentem o tamanho do elemento */
+
+    width: 327px;
+    height: 743px;
+    left: 16px;   /* Posição horizontal em relação ao canto superior esquerdo da .tela */
+    top: 28px;    /* Posição vertical */
+
+    background: #1B1E22;
+    border: 2px solid #1F2326;      /* Borda um pouco mais clara */
+    border-radius: 27px;              /* Arredondamento dos cantos */
+
+    z-index: 1; /* Fica abaixo dos elementos como corte e botões */
+}
+
+/* Área onde os cálculos são exibidos (número digitado e resultado) */
+.fundo .calculos{
+    display: inline-flex; /* Coloca o h2 (=) e h1 (resultado) lado a lado */
+
+    width: 287px;
+    margin-top: 62px;
+    margin-right: 10px;
+    padding-left: 20px;
+
+    font-size: xxx-large;
+    color: #ffffff;
+}
+
+/* Resultado (h1) será alinhado à direita automaticamente */
+.fundo h1{
+    margin-left: auto;
+}
+
+/* Estilo do símbolo de igual (=) */
+.fundo h2{
+    align-content: center;             /* Centraliza verticalmente (não muito eficaz aqui, mas não causa erro) */
+    color: #636161;
+}
+
+/* Área estética superior que simula um notch de um smartphone */
+.corte{
+    position: absolute;
+
+    width: 164px;
+    height: 28px;
+    left: 98px;
+    top: 28px;
+
+    background: #ffffff;
+    border-width: 0px 2px 2px 2px;      /* Borda apenas nas laterais e embaixo */
+    border-style: solid;
+    border-color: #1F2326;
+    border-radius: 0px 0px 16px 16px;   /* Arredonda apenas a parte inferior */
+
+    z-index: 2; /* Sobrepõe o fundo */
+}
+
+/* Camada visual roxa (para outras expressões ou informações adicionais) */
+.MaisExpressoes{
+    position: absolute;
+
+    width: 327px;
+    height: 450px;
+    left: 16px;
+    top: 319px;
+
+    background: #9481FD;
+    border-radius: 20px 20px 26px 26px;/* Arredondamento com leve estilização */
+
+    z-index: 2; /* Acima do fundo, abaixo dos botões */
+}
+
+/* Área onde ficam os botões (números e operadores) */
+.NumerosExpressoes{
+    position: absolute;
+
+    width: 327px;
+    height: 435px;
+    left: 16px;
+    top: 336px;
+
+    background: #1B1E22;
+    border-radius: 20px 20px 26px 26px;
+
+    z-index: 3; /* Acima de todas as camadas anteriores */
+}
+
+/* Grid de botões da calculadora (numerais e operadores) */
+.digitos{
+    margin: auto;
+    margin-top: 22px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas de tamanho igual */
+    gap: 10px;                             /* Espaço entre os botões */
+
+    width: 260px;
+    height: 390px;
+}
+
+/* Estilo base de todos os botões */
+.digitos .btnMaster {
+    padding: 15px;
+    background-color: #2C2E33;
+    color: white;
+    border: none;                /* Sem borda */
+    border-radius: 36px;         /* Botões redondos */
+    font-size: 28px;
+    cursor: pointer;             /* Cursor de clique */
+}
+
+/* Estilo para botões desativados*/
+#desativado{
+    background-color: #1B1E22;
+    cursor: no-drop;             /* Cursor de bloqueado */
+}
+
+/* Estilo específico para o botão "=" */
+.digitos .btnigual{
+    background-color: #9481FD;
+}
+
+/* Efeito hover no botão "=" */
+.digitos .btnigual:hover{
+    background-color: #6659af;
+}
+
+/* Efeito hover para todos os outros botões */
+.digitos button:hover{
+    background-color: #7a7a7a;
+}
